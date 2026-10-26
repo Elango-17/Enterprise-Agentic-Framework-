@@ -1,0 +1,25 @@
+id: fetch_jira_ticket
+name: Fetch Jira Ticket
+description: Retrieves details of a specific Jira ticket using its ticket key or ID.
+purpose: To fetch and display information about a Jira issue for tracking and integration
+  purposes.
+inputs:
+- name: ticket_key
+  type: string
+  description: The unique key or ID of the Jira ticket (e.g., PROJ-123).
+  required: true
+- name: jira_instance_url
+  type: string
+  description: The base URL of the Jira instance.
+  required: true
+- name: api_token
+  type: string
+  description: The authentication API token or password for Jira access.
+  required: true
+- name: username
+  type: string
+  description: The username or email associated with the Jira account.
+  required: true
+output_description: A JSON object containing the Jira ticket details such as summary,
+  description, status, assignee, and comments.
+implementation_file: fetch_jira_ticket.py

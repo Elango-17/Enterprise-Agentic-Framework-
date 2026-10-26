@@ -1,0 +1,22 @@
+id: fetch_repository_structure
+name: Fetch Repository Structure
+description: Retrieves the directory and file structure of a given code repository.
+purpose: To provide a hierarchical overview of files and folders within a code repository
+  for analysis and navigation.
+inputs:
+- name: repository_url
+  type: string
+  description: The URL of the repository to fetch the structure from.
+  required: true
+- name: branch
+  type: string
+  description: The specific branch to fetch the structure for. Defaults to the default
+    branch if not specified.
+  required: false
+- name: auth_token
+  type: string
+  description: Personal access token for authenticating with private repositories.
+  required: false
+output_description: A JSON object representing the hierarchical tree structure of
+  the repository's files and directories.
+implementation_file: fetch_repository_structure.py

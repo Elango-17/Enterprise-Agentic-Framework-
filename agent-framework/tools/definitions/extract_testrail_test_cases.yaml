@@ -1,0 +1,33 @@
+id: extract_testrail_test_cases
+name: Extract TestRail Test Cases
+description: Extracts test cases from TestRail for a given project and section.
+purpose: To retrieve and export test case documentation and metadata from TestRail
+  into a structured format for analysis or migration.
+inputs:
+- name: base_url
+  type: string
+  description: The base URL of the TestRail instance (e.g., https://yourdomain.testrail.io).
+  required: true
+- name: username
+  type: string
+  description: The username or email associated with the TestRail account.
+  required: true
+- name: api_key
+  type: string
+  description: The API key or password for TestRail authentication.
+  required: true
+- name: project_id
+  type: integer
+  description: The ID of the project from which to extract test cases.
+  required: true
+- name: suite_id
+  type: integer
+  description: The ID of the test suite (if applicable to the project configuration).
+  required: false
+- name: section_id
+  type: integer
+  description: The ID of the specific section to filter test cases.
+  required: false
+output_description: A JSON object containing a list of extracted test cases with their
+  details such as ID, title, pre-conditions, steps, and expected results.
+implementation_file: extract_testrail_test_cases.py
